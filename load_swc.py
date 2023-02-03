@@ -21,7 +21,7 @@ def load_swc(filename, cell, use_axon=True, xshift=0, yshift=0, zshift=0):
 
     # get a list of the swc section objects
     swc_secs = i3d.swc.sections
-    swc_secs = [swc_secs.object(i) for i in xrange(int(swc_secs.count()))]
+    swc_secs = [swc_secs.object(i) for i in range(int(swc_secs.count()))]
 
     # initialize the lists of sections
     cell.soma, cell.apic, cell.dend, cell.axon = [], [], [], []
@@ -55,7 +55,7 @@ def load_swc(filename, cell, use_axon=True, xshift=0, yshift=0, zshift=0):
                         swc_sec.raw.getval(2, 0), sec=sec)
 
         j = swc_sec.first
-        xx, yy, zz = [swc_sec.raw.getrow(i).c(j) for i in xrange(3)]
+        xx, yy, zz = [swc_sec.raw.getrow(i).c(j) for i in range(3)]
         dd = swc_sec.d.c(j)
         if swc_sec.iscontour_:
             # never happens in SWC files, but can happen in other formats supported
